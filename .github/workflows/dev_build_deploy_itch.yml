@@ -1,0 +1,152 @@
+name: (Dev) Build and deploy on Itch.io 
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sendTagAnnotations:
+    name: Send information to Telegram
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      # Normal message
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: Builds of ${{ secrets.UNITY_PROJECT_NAME }} in process.
+      # Changes message
+      - name: Set changes variable
+        id: changes
+        run: |
+          changes=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:"%s")
+          changes="${changes//'%'/'%25'}"
+          changes="${changes//$'\n'/'%0A'}"
+          changes="${changes//$'\r'/'%0D'}"
+          echo "::set-output name=changes::$changes"
+          echo "::set-output name=lasttag::$(git describe --tags --abbrev=0)" 
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: Changes since last dev-release (version ${{ steps.changes.outputs.lasttag }})
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: ${{ steps.changes.outputs.changes }}
+          
+          
+  buildForSomePlatforms:
+    name: Build for ${{ matrix.targetPlatform }} with itchio channel ${{ matrix.itch_channel }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - targetPlatform: StandaloneWindows64   # Build a Windows 64-bit standal
+            itch_channel: windows
+          - targetPlatform: StandaloneLinux64 # Build a Windows 64-bit standal
+            itch_channel: linux
+          - targetPlatform: StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+            itch_channel: mac
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
+      - name: Calculate version
+        id: versioning
+        run: |
+          strindex() {
+            x="${1%%$2*}"
+            [[ "$x" = "$1" ]] && echo -1 || echo "${#x}"
+          }
+          describe=$(git describe --tags --long --match v[0-9]*)
+          majorindex=$(strindex $describe .)
+          major=${describe:1:majorindex-1}
+          minorsub=${describe:majorindex+1}
+          minorindex=$(strindex $minorsub .)
+          minor=${minorsub:0:minorindex}
+          patchsub=${minorsub:minorindex+1}
+          patchindex=$(strindex $patchsub -)
+          patch=${patchsub:0:patchindex}
+          patch=$((patch+1))
+          version=$major.$minor.$patch
+          echo $describe
+          echo $major
+          echo $minor
+          echo $patch
+          echo $version
+          echo "::set-output name=version::$version"
+      - uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          buildMethod: UnityBuilderAction.BuildScript.Build
+          buildName: ${{ secrets.UNITY_PROJECT_NAME}}
+          targetPlatform: ${{ matrix.targetPlatform }}
+          versioning: Custom
+          version: ${{ steps.versioning.outputs.version }}
+      - name: Rename game folder
+        id: renaming
+        run: |
+          mkdir renamed
+          cp -r build/${{ matrix.targetPlatform }} renamed
+          mv renamed/${{ matrix.targetPlatform }} renamed/${{ secrets.UNITY_PROJECT_NAME }}
+          echo "::set-output name=zipName::${{ secrets.UNITY_PROJECT_NAME }}-${{ matrix.itch_channel }}-${{ steps.versioning.outputs.version }}.zip"
+      - uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.SOLAR_BUTLER_CREDENTIALS }}
+          CHANNEL: dev-${{ matrix.itch_channel }}
+          ITCH_GAME: ${{ secrets.ITCH_GAME }}
+          ITCH_USER: ${{ secrets.ITCH_USER }}
+          PACKAGE: renamed
+          VERSION: ${{ steps.versioning.outputs.version }}
+      - uses: papeloto/action-zip@v1
+        with:
+          files: renamed
+          dest: ${{ steps.renaming.outputs.zipName }}
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: Build for ${{ matrix.itch_channel }} completed
+          document: ${{ steps.renaming.outputs.zipName }}
+      - name: Push tag based on version
+        if: matrix.itch_channel == 'windows'
+        run: |
+          version=${{ steps.versioning.outputs.version }}
+          git tag v$version
+          git push origin v$version
+  
+  sendFinalInformation:
+    name: Send final information to Telegram
+    needs: buildForSomePlatforms
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: All builds completed succesfully.
+          
+  sendErrorInformation:
+    name: Send error if build fail
+    needs: buildForSomePlatforms
+    if: needs.buildForSomePlatforms.result == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: Some error ocurred during build.
