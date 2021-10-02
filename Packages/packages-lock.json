@@ -1,11 +1,32 @@
 {
   "dependencies": {
+    "com.dbrizov.naughtyattributes": {
+      "version": "2.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.funnycode.utils": {
+      "version": "https://github.com/mnicolas94/UnityUtils.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d319999b62bfa3182530969ac6b7dc6d2abc35f7"
+    },
+    "com.needle.editorpatching": {
+      "version": "1.2.0-exp.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.unity.2d.animation": {
-      "version": "5.0.4",
+      "version": "6.0.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "4.0.3",
+        "com.unity.2d.common": "5.0.0",
         "com.unity.mathematics": "1.1.0",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
@@ -14,7 +35,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.common": {
-      "version": "4.0.3",
+      "version": "5.0.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -24,26 +45,26 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.path": {
-      "version": "4.0.1",
+      "version": "5.0.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.pixel-perfect": {
-      "version": "4.0.1",
+      "version": "5.0.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.psdimporter": {
-      "version": "4.0.2",
+      "version": "5.0.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "4.0.2",
-        "com.unity.2d.animation": "5.0.2",
+        "com.unity.2d.common": "5.0.0",
+        "com.unity.2d.animation": "6.0.3",
         "com.unity.2d.sprite": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -55,13 +76,13 @@
       "dependencies": {}
     },
     "com.unity.2d.spriteshape": {
-      "version": "5.1.1",
+      "version": "6.0.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.1.0",
-        "com.unity.2d.common": "4.0.3",
-        "com.unity.2d.path": "4.0.1",
+        "com.unity.2d.common": "5.0.0",
+        "com.unity.2d.path": "5.0.0",
         "com.unity.modules.physics2d": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -73,24 +94,26 @@
       "dependencies": {}
     },
     "com.unity.addressables": {
-      "version": "https://github.com/needle-mirror/com.unity.addressables.git",
-      "depth": 0,
-      "source": "git",
+      "version": "1.19.4",
+      "depth": 1,
+      "source": "registry",
       "dependencies": {
-        "com.unity.scriptablebuildpipeline": "1.19.1",
+        "com.unity.scriptablebuildpipeline": "1.19.2",
         "com.unity.modules.assetbundle": "1.0.0",
         "com.unity.modules.imageconversion": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
         "com.unity.modules.unitywebrequest": "1.0.0",
         "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
       },
-      "hash": "74ca2a7fa74bbf711b8dba6d501b88445ad87b86"
+      "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "1.3.9",
+      "version": "1.5.7",
       "depth": 0,
       "source": "registry",
-      "dependencies": {},
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "2.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
@@ -101,16 +124,16 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "2.0.7",
+      "version": "3.0.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.test-framework": "1.1.1"
+        "com.unity.ext.nunit": "1.0.6"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.7",
+      "version": "2.0.9",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -126,30 +149,38 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.localization": {
-      "version": "https://github.com/needle-mirror/com.unity.localization.git",
+      "version": "1.0.3",
       "depth": 0,
-      "source": "git",
+      "source": "registry",
       "dependencies": {
-        "com.unity.addressables": "1.18.2"
+        "com.unity.addressables": "1.19.4",
+        "com.unity.nuget.newtonsoft-json": "2.0.0"
       },
-      "hash": "9ce2739b0d21f9878f1e14748df60663b5370bca"
+      "url": "https://packages.unity.com"
     },
     "com.unity.mathematics": {
-      "version": "1.1.0",
+      "version": "1.2.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "2.0.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.scriptablebuildpipeline": {
-      "version": "https://github.com/needle-mirror/com.unity.scriptablebuildpipeline.git",
-      "depth": 0,
-      "source": "git",
+      "version": "1.19.2",
+      "depth": 2,
+      "source": "registry",
       "dependencies": {},
-      "hash": "e66c08c23436730266590efb5f7f8c59962303ff"
+      "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
-      "version": "1.1.24",
+      "version": "1.1.26",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -159,8 +190,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.textcore": {
+      "version": "1.0.0-preview.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.textmeshpro": {
-      "version": "3.0.4",
+      "version": "3.0.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -169,7 +207,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.4.6",
+      "version": "1.5.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -189,12 +227,46 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
-    "com.yasirkula.ingamedebugconsole": {
-      "version": "https://github.com/yasirkula/UnityIngameDebugConsole.git",
+    "com.unity.ui": {
+      "version": "1.0.0-preview.17",
       "depth": 0,
-      "source": "git",
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielementsnative": "1.0.0",
+        "com.unity.textcore": "1.0.0-preview.3"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ui.builder": {
+      "version": "1.0.0-preview.17",
+      "depth": 0,
+      "source": "registry",
       "dependencies": {},
-      "hash": "fc69819980de73fdb8718dda56cb034596215ed1"
+      "url": "https://packages.unity.com"
+    },
+    "com.vertx.decorators": {
+      "version": "1.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.vertx.utilities": "2.4.4",
+        "com.needle.editorpatching": "1.2.0-exp.1"
+      },
+      "url": "https://package.openupm.com"
+    },
+    "com.vertx.utilities": {
+      "version": "2.4.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.yasirkula.ingamedebugconsole": {
+      "version": "1.5.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
