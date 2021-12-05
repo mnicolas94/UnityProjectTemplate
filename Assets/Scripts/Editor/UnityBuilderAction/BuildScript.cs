@@ -54,9 +54,11 @@ namespace UnityBuilderAction
 
             // Build addressables
             BuildAddressables();
+
+            bool devBuild = options.ContainsKey("developmentBuild");
             
             // Custom build
-            Build(buildTarget, options["customBuildPath"]);
+            Build(buildTarget, options["customBuildPath"], devBuild);
         }
 
         private static void BuildAddressables()
@@ -141,7 +143,7 @@ namespace UnityBuilderAction
             }
         }
 
-        private static void Build(BuildTarget buildTarget, string filePath)
+        private static void Build(BuildTarget buildTarget, string filePath, bool developmentBuild)
         {
             string[] scenes = EditorBuildSettings.scenes.Where(scene => scene.enabled).Select(s => s.path).ToArray();
             var buildPlayerOptions = new BuildPlayerOptions
@@ -150,8 +152,12 @@ namespace UnityBuilderAction
                 target = buildTarget,
 //                targetGroup = BuildPipeline.GetBuildTargetGroup(buildTarget),
                 locationPathName = filePath,
-//                options = UnityEditor.BuildOptions.Development
             };
+
+            if (developmentBuild)
+            {
+                buildPlayerOptions.options = BuildOptions.Development;
+            }
 
             BuildSummary buildSummary = BuildPipeline.BuildPlayer(buildPlayerOptions).summary;
             ReportSummary(buildSummary);
