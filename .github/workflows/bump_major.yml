@@ -1,4 +1,4 @@
-﻿name: Bump major version
+name: Bump major version
 
 on:
   workflow_dispatch:
@@ -26,7 +26,7 @@ jobs:
         with:
           targetPlatform: StandaloneWindows64
           customParameters: -version major
-      -name: Tag and push
+      - name: Tag and push
         run: |
           version=${{ steps.BumpStep.outputs.buildVersion }}
           echo version is $version
