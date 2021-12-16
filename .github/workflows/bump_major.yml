@@ -24,12 +24,14 @@ jobs:
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
+          buildMethod: VersionBumping.BumpEntryPoint.Bump
           targetPlatform: StandaloneWindows64
           customParameters: -version major
       - name: Tag and push
         run: |
           version=${{ steps.BumpStep.outputs.buildVersion }}
           echo version is $version
+          git commit -m "bumping major version: $version" --amend
           git tag v$version
           git push
           git push --tags
