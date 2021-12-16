@@ -31,6 +31,9 @@ jobs:
         run: |
           version=${{ steps.BumpStep.outputs.buildVersion }}
           echo version is $version
+
+          git config --global user.email "miguelcok27@gmail.com"
+          git config --global user.name "Miguel Nicolás"
           git commit -m "bumping major version: $version" --amend
           git tag v$version
           git push
