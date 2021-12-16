@@ -48,7 +48,6 @@ namespace Editor.VersionBumping
             version.GameVersion.Minor++;
             version.GameVersion.Build = 0;
             SaveVersionAsset(version);
-
         }
         
         public static void BumpPatchVersion()
@@ -56,7 +55,6 @@ namespace Editor.VersionBumping
             var version = GetVersionAsset();
             version.GameVersion.Build++;
             SaveVersionAsset(version);
-
         }
         
         public static void UpdateHashAndTimeStamp()
@@ -70,6 +68,7 @@ namespace Editor.VersionBumping
 
         private static void SaveVersionAsset(Version versionAsset)
         {
+            PlayerSettings.bundleVersion = versionAsset.GameVersion.ToString();
             EditorUtility.SetDirty(versionAsset);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();

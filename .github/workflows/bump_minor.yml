@@ -1,0 +1,35 @@
+﻿name: Bump minor version
+
+on:
+  workflow_dispatch:
+
+jobs:
+  bumpVersion:
+    name: Bump minor version
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-StandaloneWindows64
+          restore-keys: Library-
+      - uses: game-ci/unity-builder@v2
+        id: BumpStep
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: StandaloneWindows64
+          customParameters: -version minor
+      -name: Tag and push
+        run: |
+          version=${{ steps.BumpStep.outputs.buildVersion }}
+          echo version is $version
+          git tag v$version
+          git push
+          git push --tags
