@@ -1,7 +1,8 @@
 {
   "dependencies": {
-    "com.dbrizov.naughtyattributes": "2.1.0",
+    "com.dbrizov.naughtyattributes": "2.1.1",
     "com.funnycode.utils": "https://github.com/mnicolas94/UnityUtils.git",
+    "com.lms.version": "https://github.com/mnicolas94/LMS.Version.git#1.0.0",
     "com.unity.2d.animation": "6.0.3",
     "com.unity.2d.pixel-perfect": "5.0.0",
     "com.unity.2d.psdimporter": "5.0.3",
@@ -17,10 +18,8 @@
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.5.5",
     "com.unity.ugui": "1.0.0",
-    "com.unity.ui": "1.0.0-preview.17",
-    "com.unity.ui.builder": "1.0.0-preview.17",
     "com.vertx.decorators": "1.1.0",
-    "com.yasirkula.ingamedebugconsole": "1.5.1",
+    "com.yasirkula.ingamedebugconsole": "1.5.3",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",

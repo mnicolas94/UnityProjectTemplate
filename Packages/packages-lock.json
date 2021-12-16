@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.dbrizov.naughtyattributes": {
-      "version": "2.1.0",
+      "version": "2.1.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -13,6 +13,13 @@
       "source": "git",
       "dependencies": {},
       "hash": "d319999b62bfa3182530969ac6b7dc6d2abc35f7"
+    },
+    "com.lms.version": {
+      "version": "https://github.com/mnicolas94/LMS.Version.git#1.0.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5c7ce038b5dc3074e648cad3be21e1726390c65f"
     },
     "com.needle.editorpatching": {
       "version": "1.2.0-exp.1",
@@ -190,13 +197,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.textcore": {
-      "version": "1.0.0-preview.3",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.textmeshpro": {
       "version": "3.0.6",
       "depth": 0,
@@ -227,23 +227,6 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
-    "com.unity.ui": {
-      "version": "1.0.0-preview.17",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.uielementsnative": "1.0.0",
-        "com.unity.textcore": "1.0.0-preview.3"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.ui.builder": {
-      "version": "1.0.0-preview.17",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.vertx.decorators": {
       "version": "1.1.0",
       "depth": 0,
@@ -262,7 +245,7 @@
       "url": "https://package.openupm.com"
     },
     "com.yasirkula.ingamedebugconsole": {
-      "version": "1.5.1",
+      "version": "1.5.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
