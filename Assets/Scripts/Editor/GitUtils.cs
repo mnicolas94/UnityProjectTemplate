@@ -50,5 +50,13 @@ namespace Editor
 
             return output;  // Return the output from git.
         }
+        
+        public static string GetGitCommitHash()
+        {
+            string gitCommand = "rev-parse --short HEAD";
+            var stdout = RunGitCommand(gitCommand);
+            stdout = stdout.Trim();
+            return stdout;
+        }
     }
 }
