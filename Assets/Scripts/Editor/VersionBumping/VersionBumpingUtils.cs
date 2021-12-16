@@ -69,6 +69,7 @@ namespace Editor.VersionBumping
         private static void SaveVersionAsset(Version versionAsset)
         {
             PlayerSettings.bundleVersion = versionAsset.GameVersion.ToString();
+            PlayerSettings.macOS.buildNumber = versionAsset.GameVersion.ToString();
             EditorUtility.SetDirty(versionAsset);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
