@@ -36,4 +36,4 @@ jobs:
           git config --global user.name "Miguel Nicolás"
           git commit -m "bumping major version: $version" --amend
           git tag v$version
-          git push ${{ github.ref_name }} --tags
+          git push origin ${{ github.ref_name }} --tags
