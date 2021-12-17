@@ -18,14 +18,14 @@ namespace Editor.VersionBumping
             {
                 throw new Exception("Version asset not found");
             }
-            else if (assets.Length > 1)
+            if (assets.Length > 1)
             {
                 throw new Exception(
                     $"More than one Version asset in the project." +
                     $" Please ensure only one exists.\n" +
                     $"{string.Join("\n", assets.Select(s => AssetDatabase.GUIDToAssetPath(s)))}");
             }
-            else if (assets.Length == 1)
+            if (assets.Length == 1)
             {
                 versionAsset = AssetDatabase.LoadAssetAtPath<Version>(AssetDatabase.GUIDToAssetPath(assets[0]));
             }
