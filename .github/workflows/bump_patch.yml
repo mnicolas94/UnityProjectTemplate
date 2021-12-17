@@ -33,6 +33,7 @@ jobs:
           else
             oldversion="there was no version before"
             version=0.1.0
+          fi
           echo old version: $oldversion
           echo version: $version
           git tag v$version
