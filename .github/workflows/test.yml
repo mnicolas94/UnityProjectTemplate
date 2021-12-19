@@ -1,0 +1,30 @@
+name: (Dev) Build and deploy on Itch.io 
+
+on:
+  workflow_dispatch:
+
+jobs:
+          
+  buildForSomePlatforms:
+    name: Build for ${{ matrix.targetPlatform }} with itchio channel ${{ matrix.itch_channel }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-StandaloneWindows64
+          restore-keys: Library-
+      - uses: game-ci/unity-builder@v2
+        id: build
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          buildMethod: UnityBuilderAction.BuildScript.Build
+          targetPlatform: StandaloneWindows64
+          versioning: None
+      - name: print version
+        run: |
+          echo ${{ steps.build.outputs.buildVersion }}
