@@ -63,3 +63,7 @@ crashlytics-build.properties
 
 # Jetbrains
 /.idea/
+
+# TextMeshPro
+/Assets/TextMesh Pro/
+/Assets/TextMesh Pro.meta
