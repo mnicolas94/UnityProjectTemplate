@@ -1,4 +1,4 @@
-name: (Dev) Build and deploy on Itch.io 
+name: test
 
 on:
   workflow_dispatch:
