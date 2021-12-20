@@ -85,7 +85,7 @@ jobs:
           CHANNEL: dev-${{ matrix.itch_channel }}
           ITCH_GAME: ${{ secrets.ITCH_GAME }}
           ITCH_USER: ${{ secrets.ITCH_USER }}
-          PACKAGE: build
+          PACKAGE: build/Android/${{ secrets.UNITY_PROJECT_NAME }}.apk
           VERSION: ${{ steps.version.outputs.version }}
       - uses: appleboy/telegram-action@master
         with:
