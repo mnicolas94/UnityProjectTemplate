@@ -1,4 +1,4 @@
-﻿name: (Android) Build and deploy on Itch.io 
+name: (Standalone | Release) Build and deploy standalone release on Itch.io and Telegram
 
 on:
   workflow_dispatch:
@@ -29,8 +29,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - targetPlatform: Android
-            itch_channel: android
+          - targetPlatform: StandaloneWindows64   # Build a Windows 64-bit standalone
+            itch_channel: windows
+          - targetPlatform: StandaloneLinux64 # Build a Linux 64-bit standalone
+            itch_channel: linux
+          - targetPlatform: StandaloneOSX # Build a macOS standalone.
+            itch_channel: mac
     steps:
       - uses: actions/checkout@v2
         with:
@@ -49,31 +53,36 @@ jobs:
           buildMethod: UnityBuilderAction.BuildScript.Build
           targetPlatform: ${{ matrix.targetPlatform }}
           versioning: None
-          androidKeystoreName: user.keystore
-          androidKeystoreBase64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
-          androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
-          androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
-          androidKeyaliasPass: ${{ secrets.ANDROID_KEYALIAS_PASS }}
       - name: Get version from tag
         id: version
         run: |
           version=$(git describe --tags --abbrev=0 --match v[0-9]*)
           version=${version:1}
           echo "::set-output name=version::$version"
+      - name: Rename game folder
+        id: renaming
+        run: |
+          mkdir renamed
+          cp -r build/${{ matrix.targetPlatform }} renamed
+          mv renamed/${{ matrix.targetPlatform }} renamed/${{ secrets.UNITY_PROJECT_NAME }}
       - uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.SOLAR_BUTLER_CREDENTIALS }}
           CHANNEL: ${{ matrix.itch_channel }}
           ITCH_GAME: ${{ secrets.ITCH_GAME }}
           ITCH_USER: ${{ secrets.ITCH_USER }}
-          PACKAGE: build
+          PACKAGE: renamed
           VERSION: ${{ steps.version.outputs.version }}
+      - uses: papeloto/action-zip@v1
+        with:
+          files: renamed
+          dest: ${{ steps.renaming.outputs.zipName }}
       - uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO_TSM }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: Build for ${{ matrix.itch_channel }} completed
-          document: build/Android/${{ secrets.UNITY_PROJECT_NAME }}.apk
+          document: ${{ steps.renaming.outputs.zipName }}
   
   sendFinalInformation:
     name: Send final information to Telegram

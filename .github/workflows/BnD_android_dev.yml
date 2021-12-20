@@ -1,4 +1,4 @@
-name: Build and deploy on Itch.io 
+﻿name: (Android | Dev) Build and deploy android development build on Itch.io and Telegram
 
 on:
   workflow_dispatch:
@@ -14,12 +14,30 @@ jobs:
           lfs: true
       # Normal message
       - uses: appleboy/telegram-action@master
-        env:
-          version: $(git describe --tags --abbrev=0 --match v[0-9]*)
         with:
           to: ${{ secrets.TELEGRAM_TO_TSM }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: RELEASE builds of ${{ secrets.UNITY_PROJECT_NAME }} in process. Last version ${{ env.version }}
+          message: Builds of ${{ secrets.UNITY_PROJECT_NAME }} in process.
+      # Changes message
+      - name: Set changes variable
+        id: changes
+        run: |
+          changes=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:"%s")
+          changes="${changes//'%'/'%25'}"
+          changes="${changes//$'\n'/'%0A'}"
+          changes="${changes//$'\r'/'%0D'}"
+          echo "::set-output name=changes::$changes"
+          echo "::set-output name=lasttag::$(git describe --tags --abbrev=0)" 
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: Changes since last dev-release (version ${{ steps.changes.outputs.lasttag }})
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: ${{ steps.changes.outputs.changes }}
           
           
   buildForSomePlatforms:
@@ -29,12 +47,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - targetPlatform: StandaloneWindows64   # Build a Windows 64-bit standalone
-            itch_channel: windows
-          - targetPlatform: StandaloneLinux64 # Build a Linux 64-bit standalone
-            itch_channel: linux
-          - targetPlatform: StandaloneOSX # Build a macOS standalone.
-            itch_channel: mac
+          - targetPlatform: Android
+            itch_channel: android
     steps:
       - uses: actions/checkout@v2
         with:
@@ -53,36 +67,32 @@ jobs:
           buildMethod: UnityBuilderAction.BuildScript.Build
           targetPlatform: ${{ matrix.targetPlatform }}
           versioning: None
+          androidKeystoreName: user.keystore
+          androidKeystoreBase64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
+          androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
+          androidKeyaliasPass: ${{ secrets.ANDROID_KEYALIAS_PASS }}
+          customParameters: -developmentBuild
       - name: Get version from tag
         id: version
         run: |
           version=$(git describe --tags --abbrev=0 --match v[0-9]*)
           version=${version:1}
           echo "::set-output name=version::$version"
-      - name: Rename game folder
-        id: renaming
-        run: |
-          mkdir renamed
-          cp -r build/${{ matrix.targetPlatform }} renamed
-          mv renamed/${{ matrix.targetPlatform }} renamed/${{ secrets.UNITY_PROJECT_NAME }}
       - uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.SOLAR_BUTLER_CREDENTIALS }}
-          CHANNEL: ${{ matrix.itch_channel }}
+          CHANNEL: dev-${{ matrix.itch_channel }}
           ITCH_GAME: ${{ secrets.ITCH_GAME }}
           ITCH_USER: ${{ secrets.ITCH_USER }}
-          PACKAGE: renamed
+          PACKAGE: build
           VERSION: ${{ steps.version.outputs.version }}
-      - uses: papeloto/action-zip@v1
-        with:
-          files: renamed
-          dest: ${{ steps.renaming.outputs.zipName }}
       - uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO_TSM }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: Build for ${{ matrix.itch_channel }} completed
-          document: ${{ steps.renaming.outputs.zipName }}
+          document: build/Android/${{ secrets.UNITY_PROJECT_NAME }}.apk
   
   sendFinalInformation:
     name: Send final information to Telegram
@@ -94,3 +104,15 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO_TSM }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: All builds completed succesfully.
+          
+  sendErrorInformation:
+    name: Send error if build fail
+    needs: buildForSomePlatforms
+    if: needs.buildForSomePlatforms.result == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: Some error ocurred during build.

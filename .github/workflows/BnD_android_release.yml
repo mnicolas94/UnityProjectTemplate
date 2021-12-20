@@ -1,4 +1,4 @@
-﻿name: (Android | Dev) Build and deploy on Itch.io 
+﻿name: (Android | Release) Build and deploy android release on Itch.io and Telegram
 
 on:
   workflow_dispatch:
@@ -14,30 +14,12 @@ jobs:
           lfs: true
       # Normal message
       - uses: appleboy/telegram-action@master
+        env:
+          version: $(git describe --tags --abbrev=0 --match v[0-9]*)
         with:
           to: ${{ secrets.TELEGRAM_TO_TSM }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: Builds of ${{ secrets.UNITY_PROJECT_NAME }} in process.
-      # Changes message
-      - name: Set changes variable
-        id: changes
-        run: |
-          changes=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:"%s")
-          changes="${changes//'%'/'%25'}"
-          changes="${changes//$'\n'/'%0A'}"
-          changes="${changes//$'\r'/'%0D'}"
-          echo "::set-output name=changes::$changes"
-          echo "::set-output name=lasttag::$(git describe --tags --abbrev=0)" 
-      - uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: Changes since last dev-release (version ${{ steps.changes.outputs.lasttag }})
-      - uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: ${{ steps.changes.outputs.changes }}
+          message: RELEASE builds of ${{ secrets.UNITY_PROJECT_NAME }} in process. Last version ${{ env.version }}
           
           
   buildForSomePlatforms:
@@ -72,7 +54,6 @@ jobs:
           androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
           androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
           androidKeyaliasPass: ${{ secrets.ANDROID_KEYALIAS_PASS }}
-          customParameters: -developmentBuild
       - name: Get version from tag
         id: version
         run: |
@@ -82,7 +63,7 @@ jobs:
       - uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.SOLAR_BUTLER_CREDENTIALS }}
-          CHANNEL: dev-${{ matrix.itch_channel }}
+          CHANNEL: ${{ matrix.itch_channel }}
           ITCH_GAME: ${{ secrets.ITCH_GAME }}
           ITCH_USER: ${{ secrets.ITCH_USER }}
           PACKAGE: build
@@ -104,15 +85,3 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO_TSM }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: All builds completed succesfully.
-          
-  sendErrorInformation:
-    name: Send error if build fail
-    needs: buildForSomePlatforms
-    if: needs.buildForSomePlatforms.result == 'failure'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: Some error ocurred during build.

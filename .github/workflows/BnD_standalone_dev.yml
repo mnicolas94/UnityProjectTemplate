@@ -1,4 +1,4 @@
-name: (Dev) Build and deploy on Itch.io 
+name: (Standalone | Dev) Build and deploy standalone development build on Itch.io and Telegram
 
 on:
   workflow_dispatch:
