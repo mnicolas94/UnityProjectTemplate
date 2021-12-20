@@ -47,11 +47,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - targetPlatform: StandaloneWindows64   # Build a Windows 64-bit standal
+          - targetPlatform: StandaloneWindows64   # Build a Windows 64-bit standalone
             itch_channel: windows
-          - targetPlatform: StandaloneLinux64 # Build a Windows 64-bit standal
+          - targetPlatform: StandaloneLinux64 # Build a Linux 64-bit standalone
             itch_channel: linux
-          - targetPlatform: StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+          - targetPlatform: StandaloneOSX # Build a macOS standalone.
             itch_channel: mac
     steps:
       - uses: actions/checkout@v2
@@ -63,46 +63,28 @@ jobs:
           path: Library
           key: Library-${{ matrix.targetPlatform }}
           restore-keys: Library-
-      - name: Calculate version
-        id: versioning
-        run: |
-          strindex() {
-            x="${1%%$2*}"
-            [[ "$x" = "$1" ]] && echo -1 || echo "${#x}"
-          }
-          describe=$(git describe --tags --long --match v[0-9]*)
-          majorindex=$(strindex $describe .)
-          major=${describe:1:majorindex-1}
-          minorsub=${describe:majorindex+1}
-          minorindex=$(strindex $minorsub .)
-          minor=${minorsub:0:minorindex}
-          patchsub=${minorsub:minorindex+1}
-          patchindex=$(strindex $patchsub -)
-          patch=${patchsub:0:patchindex}
-          patch=$((patch+1))
-          version=$major.$minor.$patch
-          echo $describe
-          echo $major
-          echo $minor
-          echo $patch
-          echo $version
-          echo "::set-output name=version::$version"
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
+          buildName: ${{ secrets.UNITY_PROJECT_NAME }}
           buildMethod: UnityBuilderAction.BuildScript.Build
-          buildName: ${{ secrets.UNITY_PROJECT_NAME}}
           targetPlatform: ${{ matrix.targetPlatform }}
-          versioning: Custom
-          version: ${{ steps.versioning.outputs.version }}
+          versioning: None
+          customParameters: -developmentBuild
+      - name: Get version from tag
+        id: version
+        run: |
+          version=$(git describe --tags --abbrev=0 --match v[0-9]*)
+          version=${version:1}
+          echo "::set-output name=version::$version"
       - name: Rename game folder
         id: renaming
         run: |
           mkdir renamed
           cp -r build/${{ matrix.targetPlatform }} renamed
           mv renamed/${{ matrix.targetPlatform }} renamed/${{ secrets.UNITY_PROJECT_NAME }}
-          echo "::set-output name=zipName::${{ secrets.UNITY_PROJECT_NAME }}-${{ matrix.itch_channel }}-${{ steps.versioning.outputs.version }}.zip"
+          echo "::set-output name=zipName::${{ secrets.UNITY_PROJECT_NAME }}-${{ matrix.itch_channel }}-${{ steps.version.outputs.version }}.zip"
       - uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.SOLAR_BUTLER_CREDENTIALS }}
@@ -110,7 +92,7 @@ jobs:
           ITCH_GAME: ${{ secrets.ITCH_GAME }}
           ITCH_USER: ${{ secrets.ITCH_USER }}
           PACKAGE: renamed
-          VERSION: ${{ steps.versioning.outputs.version }}
+          VERSION: ${{ steps.version.outputs.version }}
       - uses: papeloto/action-zip@v1
         with:
           files: renamed
@@ -121,12 +103,6 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: Build for ${{ matrix.itch_channel }} completed
           document: ${{ steps.renaming.outputs.zipName }}
-      - name: Push tag based on version
-        if: matrix.itch_channel == 'windows'
-        run: |
-          version=${{ steps.versioning.outputs.version }}
-          git tag v$version
-          git push origin v$version
   
   sendFinalInformation:
     name: Send final information to Telegram
