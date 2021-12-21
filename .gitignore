@@ -67,3 +67,6 @@ crashlytics-build.properties
 # TextMeshPro
 /Assets/TextMesh Pro/
 /Assets/TextMesh Pro.meta
+
+# Android keystore
+*.keystore
