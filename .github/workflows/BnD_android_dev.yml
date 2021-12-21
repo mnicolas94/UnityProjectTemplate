@@ -15,7 +15,7 @@ jobs:
       # Normal message
       - uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: Builds of ${{ secrets.UNITY_PROJECT_NAME }} in process.
       # Changes message
@@ -30,12 +30,12 @@ jobs:
           echo "::set-output name=lasttag::$(git describe --tags --abbrev=0)" 
       - uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: Changes since last dev-release (version ${{ steps.changes.outputs.lasttag }})
       - uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: ${{ steps.changes.outputs.changes }}
           
@@ -89,7 +89,7 @@ jobs:
           VERSION: ${{ steps.version.outputs.version }}
       - uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: Build for ${{ matrix.itch_channel }} completed
           document: build/Android/${{ secrets.UNITY_PROJECT_NAME }}.apk
@@ -101,7 +101,7 @@ jobs:
     steps:
       - uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: All builds completed succesfully.
           
@@ -113,6 +113,6 @@ jobs:
     steps:
       - uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: Some error ocurred during build.

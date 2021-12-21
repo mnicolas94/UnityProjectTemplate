@@ -17,7 +17,7 @@ jobs:
         env:
           version: $(git describe --tags --abbrev=0 --match v[0-9]*)
         with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: RELEASE builds of ${{ secrets.UNITY_PROJECT_NAME }} in process. Last version ${{ env.version }}
           
@@ -79,7 +79,7 @@ jobs:
           dest: ${{ steps.renaming.outputs.zipName }}
       - uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: Build for ${{ matrix.itch_channel }} completed
           document: ${{ steps.renaming.outputs.zipName }}
@@ -91,6 +91,6 @@ jobs:
     steps:
       - uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO_TSM }}
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: All builds completed succesfully.
