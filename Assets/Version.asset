@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameVersion:
     Major: 0
-    Minor: 2
-    Build: 1
+    Minor: 3
+    Build: 0
   extraVersions: []
-  GitHash: 6c7d0c0
-  BuildTimestamp: 2021 diciembre 19 - 16:04
+  GitHash: 
+  BuildTimestamp: 
   enableAutoIncrement: 0
   enableGitHash: 0
