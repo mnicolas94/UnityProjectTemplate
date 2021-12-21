@@ -87,7 +87,7 @@ jobs:
           echo "::set-output name=zipName::${{ secrets.UNITY_PROJECT_NAME }}-${{ matrix.itch_channel }}-${{ steps.version.outputs.version }}.zip"
       - uses: josephbmanley/butler-publish-itchio-action@master
         env:
-          BUTLER_CREDENTIALS: ${{ secrets.SOLAR_BUTLER_CREDENTIALS }}
+          BUTLER_CREDENTIALS: ${{ secrets.ITCH_BUTLER_CREDENTIALS }}
           CHANNEL: dev-${{ matrix.itch_channel }}
           ITCH_GAME: ${{ secrets.ITCH_GAME }}
           ITCH_USER: ${{ secrets.ITCH_USER }}
