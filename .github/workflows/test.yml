@@ -5,7 +5,7 @@ on:
 
 jobs:
   runReusableWorkflow:
-    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_standalone_dev.yml@v1-pre-1
+    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_standalone_dev.yml@v1-pre-2
     with:
       project_name: "Test"
     secrets:
