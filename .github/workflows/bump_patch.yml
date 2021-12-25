@@ -5,38 +5,5 @@ on:
     branches: [ dev, develop ]
     
 jobs:
-  bumpPatch:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Bump patch, tag and push
-        run: |
-          strindex() {
-            x="${1%%$2*}"
-            [[ "$x" = "$1" ]] && echo -1 || echo "${#x}"
-          }
-          if [ $(git describe --tags --long --match v[0-9]*) ]
-          then
-            describe=$(git describe --tags --long --match v[0-9]*)
-            majorindex=$(strindex $describe .)
-            major=${describe:1:majorindex-1}
-            minorsub=${describe:majorindex+1}
-            minorindex=$(strindex $minorsub .)
-            minor=${minorsub:0:minorindex}
-            patchsub=${minorsub:minorindex+1}
-            patchindex=$(strindex $patchsub -)
-            patch=${patchsub:0:patchindex}
-            newpatch=$((patch+1))
-            oldversion=$major.$minor.$patch
-            version=$major.$minor.$newpatch
-          else
-            oldversion="there was no version before"
-            version=0.1.0
-          fi
-          echo old version: $oldversion
-          echo version: $version
-          git tag v$version
-          git push origin v$version
+  run:
+    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/bump_patch.yml@v1-pre-5

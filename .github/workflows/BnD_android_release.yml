@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  runReusableWorkflow:
-    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_android.yml@v1-pre-4
+  run:
+    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_android.yml@v1-pre-5
     with:
       project_name: ${{ secrets.UNITY_PROJECT_NAME }}
       development_build: false
