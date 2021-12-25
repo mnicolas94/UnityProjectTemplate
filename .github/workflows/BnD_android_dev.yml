@@ -5,12 +5,11 @@ on:
 
 jobs:
   getProjectName:
-    runs-on: ubuntu-latest
     outputs:
       project_name: ${{ secrets.UNITY_PROJECT_NAME }}
   run:
-    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_android.yml@v1-pre-5
     needs: getProjectName
+    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_android.yml@v1-pre-5
     with:
       project_name: ${{ needs.getProjectName.outputs.project_name }}
       development_build: true
