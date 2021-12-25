@@ -3,13 +3,16 @@
 on:
   workflow_dispatch:
 
-env:
-  PROJECT_NAME: "qweweq"
 jobs:
+  getProjectName:
+    runs-on: ubuntu-latest
+    outputs:
+      project_name: ${{ secrets.UNITY_PROJECT_NAME }}
   run:
     uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_android.yml@v1-pre-5
+    needs: getProjectName
     with:
-      project_name: ${{ env.PROJECT_NAME }}
+      project_name: ${{ needs.getProjectName.outputs.project_name }}
       development_build: true
     secrets:
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
