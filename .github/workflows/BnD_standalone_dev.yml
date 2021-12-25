@@ -5,11 +5,11 @@ on:
 
 jobs:
   run:
-    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_standalone.yml@v1-pre-5
+    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_standalone.yml@v1-pre-6
     with:
-      project_name: ${{ secrets.UNITY_PROJECT_NAME }}
       development_build: true
     secrets:
+      PROJECT_NAME: ${{ secrets.UNITY_PROJECT_NAME }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
       UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
