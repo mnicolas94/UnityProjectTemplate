@@ -4,93 +4,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  sendTagAnnotations:
-    name: Send information to Telegram
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          lfs: true
-      # Normal message
-      - uses: appleboy/telegram-action@master
-        env:
-          version: $(git describe --tags --abbrev=0 --match v[0-9]*)
-        with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: RELEASE builds of ${{ secrets.UNITY_PROJECT_NAME }} in process. Last version ${{ env.version }}
-          
-          
-  buildForSomePlatforms:
-    name: Build for ${{ matrix.targetPlatform }} with itchio channel ${{ matrix.itch_channel }}
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - targetPlatform: StandaloneWindows64   # Build a Windows 64-bit standalone
-            itch_channel: windows
-          - targetPlatform: StandaloneLinux64 # Build a Linux 64-bit standalone
-            itch_channel: linux
-          - targetPlatform: StandaloneOSX # Build a macOS standalone.
-            itch_channel: mac
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          lfs: true
-      - uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-${{ matrix.targetPlatform }}
-          restore-keys: Library-
-      - uses: game-ci/unity-builder@v2
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-        with:
-          buildName: ${{ secrets.UNITY_PROJECT_NAME }}
-          buildMethod: UnityBuilderAction.BuildScript.Build
-          targetPlatform: ${{ matrix.targetPlatform }}
-          versioning: None
-      - name: Get version from tag
-        id: version
-        run: |
-          version=$(git describe --tags --abbrev=0 --match v[0-9]*)
-          version=${version:1}
-          echo "::set-output name=version::$version"
-      - name: Rename game folder
-        id: renaming
-        run: |
-          mkdir renamed
-          cp -r build/${{ matrix.targetPlatform }} renamed
-          mv renamed/${{ matrix.targetPlatform }} renamed/${{ secrets.UNITY_PROJECT_NAME }}
-      - uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.ITCH_BUTLER_CREDENTIALS }}
-          CHANNEL: ${{ matrix.itch_channel }}
-          ITCH_GAME: ${{ secrets.ITCH_GAME }}
-          ITCH_USER: ${{ secrets.ITCH_USER }}
-          PACKAGE: renamed
-          VERSION: ${{ steps.version.outputs.version }}
-      - uses: papeloto/action-zip@v1
-        with:
-          files: renamed
-          dest: ${{ steps.renaming.outputs.zipName }}
-      - uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: Build for ${{ matrix.itch_channel }} completed
-          document: ${{ steps.renaming.outputs.zipName }}
-  
-  sendFinalInformation:
-    name: Send final information to Telegram
-    needs: buildForSomePlatforms
-    runs-on: ubuntu-latest
-    steps:
-      - uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: All builds completed succesfully.
+  runReusableWorkflow:
+    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_standalone.yml@v1-pre-4
+    with:
+      project_name: ${{ secrets.UNITY_PROJECT_NAME }}
+      development_build: false
+    secrets:
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+      UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+      ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      ANDROID_KEYSTORE_PASS: ${{ secrets.ANDROID_KEYSTORE_PASS }}
+      ANDROID_KEYALIAS_NAME: ${{ secrets.ANDROID_KEYALIAS_NAME }}
+      ANDROID_KEYALIAS_PASS: ${{ secrets.ANDROID_KEYALIAS_PASS }}
+      ITCH_BUTLER_CREDENTIALS: ${{ secrets.ITCH_BUTLER_CREDENTIALS }}
+      ITCH_GAME: ${{ secrets.ITCH_GAME }}
+      ITCH_USER: ${{ secrets.ITCH_USER }}
