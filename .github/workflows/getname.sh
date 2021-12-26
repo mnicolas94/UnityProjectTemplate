@@ -1,5 +1,7 @@
-﻿﻿while IFS=: read -r key value; do 
-	if [[ $key == "  productName" ]]; then
+while IFS=: read -r key value
+do
+    if [[ $key == "  productName" ]]
+    then
 		echo $value;
-	fi;
+	fi
 done < "ProjectSettings/ProjectSettings.asset"
