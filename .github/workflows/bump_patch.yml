@@ -6,4 +6,4 @@ on:
     
 jobs:
   run:
-    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/bump_patch.yml@v1-pre-5
+    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/bump_patch.yml@v1-pre-8
