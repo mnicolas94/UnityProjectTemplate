@@ -1,18 +1,18 @@
 {
   "dependencies": {
     "com.dbrizov.naughtyattributes": {
-      "version": "2.1.1",
+      "version": "2.1.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
     "com.facticus.utils": {
-      "version": "https://github.com/mnicolas94/UnityUtils.git",
+      "version": "0.6.3",
       "depth": 0,
-      "source": "git",
+      "source": "registry",
       "dependencies": {},
-      "hash": "01395d8a0434888367ca9234d717f72dad701815"
+      "url": "https://package.openupm.com"
     },
     "com.lms.version_mand": {
       "version": "https://github.com/mnicolas94/LMS.Version.git?path=/Assets/Version",
@@ -21,9 +21,9 @@
       "dependencies": {},
       "hash": "8bbd4283f361df3280a0335ea833ed51f4426c4e"
     },
-    "com.needle.editorpatching": {
-      "version": "1.2.0-exp.1",
-      "depth": 1,
+    "com.mackysoft.serializereference-extensions": {
+      "version": "1.1.4",
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
@@ -233,23 +233,6 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
-    },
-    "com.vertx.decorators": {
-      "version": "1.1.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.vertx.utilities": "2.4.4",
-        "com.needle.editorpatching": "1.2.0-exp.1"
-      },
-      "url": "https://package.openupm.com"
-    },
-    "com.vertx.utilities": {
-      "version": "2.4.4",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
     },
     "com.yasirkula.ingamedebugconsole": {
       "version": "1.5.3",

@@ -1,8 +1,9 @@
 {
   "dependencies": {
-    "com.dbrizov.naughtyattributes": "2.1.1",
-    "com.facticus.utils": "https://github.com/mnicolas94/UnityUtils.git",
+    "com.dbrizov.naughtyattributes": "2.1.4",
+    "com.facticus.utils": "0.6.3",
     "com.lms.version_mand": "https://github.com/mnicolas94/LMS.Version.git?path=/Assets/Version",
+    "com.mackysoft.serializereference-extensions": "1.1.4",
     "com.unity.2d.animation": "6.0.3",
     "com.unity.2d.pixel-perfect": "5.0.0",
     "com.unity.2d.psdimporter": "5.0.3",
@@ -19,7 +20,6 @@
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.5.5",
     "com.unity.ugui": "1.0.0",
-    "com.vertx.decorators": "1.1.0",
     "com.yasirkula.ingamedebugconsole": "1.5.3",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
@@ -58,10 +58,12 @@
       "name": "OpenUPM",
       "url": "https://package.openupm.com",
       "scopes": [
-        "com.vertx",
+        "com.dbrizov",
+        "com.facticus.utils",
+        "com.mackysoft.serializereference-extensions",
         "com.needle",
-        "com.yasirkula",
-        "com.dbrizov"
+        "com.openupm",
+        "com.yasirkula"
       ]
     }
   ]
