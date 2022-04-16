@@ -5,7 +5,7 @@ on:
 
 jobs:
   run:
-    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_android.yml@v1-pre-8
+    uses: mnicolas94/UnityCICDWorkflows/.github/workflows/BnD_android.yml@v1-pre-9
     with:
       development_build: true
     secrets:
