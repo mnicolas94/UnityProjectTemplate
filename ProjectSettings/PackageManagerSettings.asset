@@ -29,10 +29,12 @@ MonoBehaviour:
     m_Name: OpenUPM
     m_Url: https://package.openupm.com
     m_Scopes:
-    - com.vertx
-    - com.needle
-    - com.yasirkula
     - com.dbrizov
+    - com.facticus.utils
+    - com.mackysoft.serializereference-extensions
+    - com.needle
+    - com.openupm
+    - com.yasirkula
     m_IsDefault: 0
     m_Capabilities: 0
   m_UserSelectedRegistryName: OpenUPM
@@ -44,19 +46,23 @@ MonoBehaviour:
       m_Name: OpenUPM
       m_Url: https://package.openupm.com
       m_Scopes:
-      - com.vertx
-      - com.needle
-      - com.yasirkula
       - com.dbrizov
+      - com.facticus.utils
+      - com.mackysoft.serializereference-extensions
+      - com.needle
+      - com.openupm
+      - com.yasirkula
       m_IsDefault: 0
       m_Capabilities: 0
     m_Modified: 0
     m_Name: OpenUPM
     m_Url: https://package.openupm.com
     m_Scopes:
-    - com.vertx
-    - com.needle
-    - com.yasirkula
     - com.dbrizov
+    - com.facticus.utils
+    - com.mackysoft.serializereference-extensions
+    - com.needle
+    - com.openupm
+    - com.yasirkula
     m_SelectedScopeIndex: 0
   m_LoadAssets: 0
