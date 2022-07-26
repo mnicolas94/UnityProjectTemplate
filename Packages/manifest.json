@@ -1,7 +1,10 @@
 {
   "dependencies": {
     "com.dbrizov.naughtyattributes": "2.1.4",
-    "com.facticus.utils": "0.8.4",
+    "com.facticus.asyncutils": "https://github.com/mnicolas94/unity-async-utils.git",
+    "com.facticus.loadingutils": "https://github.com/mnicolas94/unity-loading-utils.git",
+    "com.facticus.savesystem": "https://github.com/mnicolas94/unity-save-system.git",
+    "com.facticus.utils": "0.10.4",
     "com.lms.version_mand": "https://github.com/mnicolas94/LMS.Version.git?path=/Assets/Version",
     "com.mackysoft.serializereference-extensions": "1.1.6",
     "com.unity.2d.animation": "6.0.3",
@@ -20,7 +23,7 @@
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.5.5",
     "com.unity.ugui": "1.0.0",
-    "com.yasirkula.ingamedebugconsole": "1.5.6",
+    "com.yasirkula.ingamedebugconsole": "1.5.7",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -51,7 +54,10 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
+    "com.unity.modules.xr": "1.0.0",
+    "com.yasirkula.assetusagedetector": "2.2.2",
+    "com.unity-atoms.unity-atoms-base-atoms": "4.4.5",
+    "com.unity-atoms.unity-atoms-core": "4.4.5"
   },
   "scopedRegistries": [
     {
@@ -63,7 +69,10 @@
         "com.mackysoft.serializereference-extensions",
         "com.needle",
         "com.openupm",
-        "com.yasirkula"
+        "com.unity-atoms.unity-atoms-base-atoms",
+        "com.unity-atoms.unity-atoms-core",
+        "com.yasirkula",
+        "com.yasirkula.assetusagedetector"
       ]
     }
   ]
