@@ -7,8 +7,37 @@
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
+    "com.facticus.asyncutils": {
+      "version": "https://github.com/mnicolas94/unity-async-utils.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.facticus.utils": "0.9.1"
+      },
+      "hash": "f6e44db669e9be4855a6f781aa2da1375cdc0049"
+    },
+    "com.facticus.loadingutils": {
+      "version": "https://github.com/mnicolas94/unity-loading-utils.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.facticus.asyncutils": "https://github.com/mnicolas94/unity-async-utils.git",
+        "com.facticus.utils": "0.10.0"
+      },
+      "hash": "086998ed579129a6443b58e39cfd0943e636b0ca"
+    },
+    "com.facticus.savesystem": {
+      "version": "https://github.com/mnicolas94/unity-save-system.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.facticus.utils": "0.10.0",
+        "com.unity.addressables": "1.19.18"
+      },
+      "hash": "465b0f3a0ecb2a6f6cdb7927516b82fb22624b3b"
+    },
     "com.facticus.utils": {
-      "version": "0.8.4",
+      "version": "0.10.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -26,6 +55,26 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.unity-atoms.unity-atoms-base-atoms": {
+      "version": "4.4.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.physics2d": "1.0.0",
+        "com.unity-atoms.unity-atoms-core": "4.4.5"
+      },
+      "url": "https://package.openupm.com"
+    },
+    "com.unity-atoms.unity-atoms-core": {
+      "version": "4.4.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
+      },
       "url": "https://package.openupm.com"
     },
     "com.unity.2d.animation": {
@@ -101,11 +150,11 @@
       "dependencies": {}
     },
     "com.unity.addressables": {
-      "version": "1.19.4",
+      "version": "1.19.18",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.scriptablebuildpipeline": "1.19.2",
+        "com.unity.scriptablebuildpipeline": "1.19.6",
         "com.unity.modules.assetbundle": "1.0.0",
         "com.unity.modules.imageconversion": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
@@ -187,7 +236,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.scriptablebuildpipeline": {
-      "version": "1.19.2",
+      "version": "1.19.6",
       "depth": 2,
       "source": "registry",
       "dependencies": {},
@@ -234,8 +283,15 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.yasirkula.assetusagedetector": {
+      "version": "2.2.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.yasirkula.ingamedebugconsole": {
-      "version": "1.5.6",
+      "version": "1.5.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
