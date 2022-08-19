@@ -24,7 +24,14 @@
         "com.facticus.asyncutils": "https://github.com/mnicolas94/unity-async-utils.git",
         "com.facticus.utils": "0.10.0"
       },
-      "hash": "086998ed579129a6443b58e39cfd0943e636b0ca"
+      "hash": "bd63ef8318bcecac5234972a7437fd9afe7ac0b7"
+    },
+    "com.facticus.modelview": {
+      "version": "https://github.com/mnicolas94/facticus-modelview.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f7d47dbf4d3eacb284d32ad9c04f7d6d128b9c8c"
     },
     "com.facticus.savesystem": {
       "version": "https://github.com/mnicolas94/unity-save-system.git",
@@ -34,10 +41,10 @@
         "com.facticus.utils": "0.10.0",
         "com.unity.addressables": "1.19.18"
       },
-      "hash": "465b0f3a0ecb2a6f6cdb7927516b82fb22624b3b"
+      "hash": "ff0eb1dd55dbcb1a95481ebf8af64cf16caad91d"
     },
     "com.facticus.utils": {
-      "version": "0.10.4",
+      "version": "0.12.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -212,11 +219,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.localization": {
-      "version": "1.0.3",
+      "version": "1.0.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.addressables": "1.19.4",
+        "com.unity.addressables": "1.19.9",
         "com.unity.nuget.newtonsoft-json": "2.0.0"
       },
       "url": "https://packages.unity.com"
@@ -296,6 +303,13 @@
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
+    },
+    "net.tnrd.serializableinterface": {
+      "version": "https://github.com/mnicolas94/Unity3D-SerializableInterface.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ffe848c940898c22816268d8be2aa3d84721a678"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
