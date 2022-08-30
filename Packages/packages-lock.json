@@ -16,6 +16,13 @@
       },
       "hash": "f6e44db669e9be4855a6f781aa2da1375cdc0049"
     },
+    "com.facticus.git-team": {
+      "version": "https://github.com/mnicolas94/facticus-git-team.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "26d3bad1366350bbd75cbc35efdb0aaa0bacdff6"
+    },
     "com.facticus.loadingutils": {
       "version": "https://github.com/mnicolas94/unity-loading-utils.git",
       "depth": 0,
@@ -44,7 +51,7 @@
       "hash": "ff0eb1dd55dbcb1a95481ebf8af64cf16caad91d"
     },
     "com.facticus.utils": {
-      "version": "0.12.4",
+      "version": "0.12.10",
       "depth": 0,
       "source": "registry",
       "dependencies": {},

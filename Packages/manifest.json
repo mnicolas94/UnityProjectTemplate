@@ -2,10 +2,11 @@
   "dependencies": {
     "com.dbrizov.naughtyattributes": "2.1.4",
     "com.facticus.asyncutils": "https://github.com/mnicolas94/unity-async-utils.git",
+    "com.facticus.git-team": "https://github.com/mnicolas94/facticus-git-team.git",
     "com.facticus.loadingutils": "https://github.com/mnicolas94/unity-loading-utils.git",
     "com.facticus.modelview": "https://github.com/mnicolas94/facticus-modelview.git",
     "com.facticus.savesystem": "https://github.com/mnicolas94/unity-save-system.git",
-    "com.facticus.utils": "0.12.4",
+    "com.facticus.utils": "0.12.10",
     "com.lms.version_mand": "https://github.com/mnicolas94/LMS.Version.git?path=/Assets/Version",
     "com.mackysoft.serializereference-extensions": "1.1.6",
     "com.unity-atoms.unity-atoms-base-atoms": "4.4.5",
