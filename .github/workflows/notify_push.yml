@@ -1,4 +1,4 @@
-﻿name: Notify push to branch different from dev
+name: Notify push to branch different from dev
 
 on:
   push:
