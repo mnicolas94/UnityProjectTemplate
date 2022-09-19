@@ -14,7 +14,23 @@
       "dependencies": {
         "com.facticus.utils": "0.9.1"
       },
-      "hash": "f6e44db669e9be4855a6f781aa2da1375cdc0049"
+      "hash": "8850d3e004d6c7a9aa4bd8a696f4700cafe49566"
+    },
+    "com.facticus.audio": {
+      "version": "https://github.com/mnicolas94/facticus-audio.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.mackysoft.serializereference-extensions": "1.1.6"
+      },
+      "hash": "a508df47b1685e507455bf65db0682244cc331a1"
+    },
+    "com.facticus.git-team": {
+      "version": "https://github.com/mnicolas94/facticus-git-team.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "2908a2d1f07f39a53c73c26be56ff33547d1916b"
     },
     "com.facticus.loadingutils": {
       "version": "https://github.com/mnicolas94/unity-loading-utils.git",
@@ -24,7 +40,14 @@
         "com.facticus.asyncutils": "https://github.com/mnicolas94/unity-async-utils.git",
         "com.facticus.utils": "0.10.0"
       },
-      "hash": "086998ed579129a6443b58e39cfd0943e636b0ca"
+      "hash": "bd63ef8318bcecac5234972a7437fd9afe7ac0b7"
+    },
+    "com.facticus.modelview": {
+      "version": "https://github.com/mnicolas94/facticus-modelview.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b3b1e6cdc9ad1200054c43f16a7ee939fa845dc3"
     },
     "com.facticus.savesystem": {
       "version": "https://github.com/mnicolas94/unity-save-system.git",
@@ -34,10 +57,10 @@
         "com.facticus.utils": "0.10.0",
         "com.unity.addressables": "1.19.18"
       },
-      "hash": "465b0f3a0ecb2a6f6cdb7927516b82fb22624b3b"
+      "hash": "ff0eb1dd55dbcb1a95481ebf8af64cf16caad91d"
     },
     "com.facticus.utils": {
-      "version": "0.10.4",
+      "version": "0.12.10",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -78,12 +101,11 @@
       "url": "https://package.openupm.com"
     },
     "com.unity.2d.animation": {
-      "version": "6.0.3",
+      "version": "7.0.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "5.0.0",
-        "com.unity.mathematics": "1.1.0",
+        "com.unity.2d.common": "6.0.3",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
         "com.unity.modules.uielements": "1.0.0"
@@ -91,36 +113,38 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.common": {
-      "version": "5.0.0",
+      "version": "6.0.3",
       "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.2d.sprite": "1.0.0",
-        "com.unity.modules.uielements": "1.0.0"
+        "com.unity.mathematics": "1.1.0",
+        "com.unity.modules.uielements": "1.0.0",
+        "com.unity.burst": "1.5.1"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.path": {
-      "version": "5.0.0",
+      "version": "5.0.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.pixel-perfect": {
-      "version": "5.0.0",
+      "version": "5.0.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.psdimporter": {
-      "version": "5.0.3",
+      "version": "6.0.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "5.0.0",
-        "com.unity.2d.animation": "6.0.3",
+        "com.unity.2d.animation": "7.0.6",
+        "com.unity.2d.common": "6.0.3",
         "com.unity.2d.sprite": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -132,13 +156,13 @@
       "dependencies": {}
     },
     "com.unity.2d.spriteshape": {
-      "version": "6.0.0",
+      "version": "7.0.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.1.0",
-        "com.unity.2d.common": "5.0.0",
-        "com.unity.2d.path": "5.0.0",
+        "com.unity.2d.common": "6.0.3",
+        "com.unity.2d.path": "5.0.2",
         "com.unity.modules.physics2d": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -150,7 +174,7 @@
       "dependencies": {}
     },
     "com.unity.addressables": {
-      "version": "1.19.18",
+      "version": "1.19.19",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -163,12 +187,21 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.burst": {
+      "version": "1.6.6",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.collab-proxy": {
-      "version": "1.5.7",
+      "version": "1.17.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "2.0.0"
+        "com.unity.services.core": "1.0.1"
       },
       "url": "https://packages.unity.com"
     },
@@ -180,7 +213,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.7",
+      "version": "3.0.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -189,7 +222,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.9",
+      "version": "2.0.16",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -198,52 +231,72 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.vscode": {
-      "version": "1.2.3",
+      "version": "1.2.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
-      "version": "1.0.2",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.localization": {
-      "version": "1.0.3",
+      "version": "1.4.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.addressables": "1.19.4",
+        "com.unity.modules.uielements": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.localization": {
+      "version": "1.3.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.addressables": "1.19.19",
         "com.unity.nuget.newtonsoft-json": "2.0.0"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.mathematics": {
-      "version": "1.2.1",
+      "version": "1.2.6",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.newtonsoft-json": {
-      "version": "2.0.0",
+      "version": "3.0.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.scriptablebuildpipeline": {
-      "version": "1.19.6",
+      "version": "1.20.1",
       "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.search.extensions": {
+      "version": "https://github.com/Unity-Technologies/com.unity.search.extensions.git?path=package",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e2dd08315866e85d830afc70c0a49eaa71bbd68e"
+    },
+    "com.unity.services.core": {
+      "version": "1.4.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.unity.modules.androidjni": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.test-framework": {
-      "version": "1.1.26",
+      "version": "1.1.31",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -263,7 +316,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.5.5",
+      "version": "1.6.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -291,11 +344,18 @@
       "url": "https://package.openupm.com"
     },
     "com.yasirkula.ingamedebugconsole": {
-      "version": "1.5.7",
+      "version": "1.5.8",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
+    },
+    "net.tnrd.serializableinterface": {
+      "version": "https://github.com/mnicolas94/Unity3D-SerializableInterface.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ffe848c940898c22816268d8be2aa3d84721a678"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
