@@ -59,6 +59,13 @@
       },
       "hash": "ff0eb1dd55dbcb1a95481ebf8af64cf16caad91d"
     },
+    "com.facticus.serializable-predicate": {
+      "version": "https://github.com/mnicolas94/facticus-serializable-predicate.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3a3fecab29467a3aab9273536c20f2796c225b46"
+    },
     "com.facticus.utils": {
       "version": "0.12.10",
       "depth": 0,
@@ -351,11 +358,11 @@
       "url": "https://package.openupm.com"
     },
     "net.tnrd.serializableinterface": {
-      "version": "https://github.com/mnicolas94/Unity3D-SerializableInterface.git",
+      "version": "1.12.1",
       "depth": 0,
-      "source": "git",
+      "source": "registry",
       "dependencies": {},
-      "hash": "ffe848c940898c22816268d8be2aa3d84721a678"
+      "url": "https://package.openupm.com"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

@@ -7,6 +7,7 @@
     "com.facticus.loadingutils": "https://github.com/mnicolas94/unity-loading-utils.git",
     "com.facticus.modelview": "https://github.com/mnicolas94/facticus-modelview.git",
     "com.facticus.savesystem": "https://github.com/mnicolas94/unity-save-system.git",
+    "com.facticus.serializable-predicate": "https://github.com/mnicolas94/facticus-serializable-predicate.git",
     "com.facticus.utils": "0.12.10",
     "com.lms.version_mand": "https://github.com/mnicolas94/LMS.Version.git?path=/Assets/Version",
     "com.mackysoft.serializereference-extensions": "1.1.6",
@@ -31,7 +32,7 @@
     "com.unity.ugui": "1.0.0",
     "com.yasirkula.assetusagedetector": "2.2.2",
     "com.yasirkula.ingamedebugconsole": "1.5.8",
-    "net.tnrd.serializableinterface": "https://github.com/mnicolas94/Unity3D-SerializableInterface.git",
+    "net.tnrd.serializableinterface": "1.12.1",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -77,7 +78,8 @@
         "com.unity-atoms.unity-atoms-base-atoms",
         "com.unity-atoms.unity-atoms-core",
         "com.yasirkula",
-        "com.yasirkula.assetusagedetector"
+        "com.yasirkula.assetusagedetector",
+        "net.tnrd.serializableinterface"
       ]
     }
   ]
