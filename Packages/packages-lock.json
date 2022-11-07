@@ -30,7 +30,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "2908a2d1f07f39a53c73c26be56ff33547d1916b"
+      "hash": "dd0372406d6e9b7db8637cbd480d6c5e507126b4"
     },
     "com.facticus.loadingutils": {
       "version": "https://github.com/mnicolas94/unity-loading-utils.git",
@@ -67,7 +67,7 @@
       "hash": "3a3fecab29467a3aab9273536c20f2796c225b46"
     },
     "com.facticus.utils": {
-      "version": "0.12.10",
+      "version": "0.12.20",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
