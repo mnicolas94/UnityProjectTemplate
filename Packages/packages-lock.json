@@ -54,7 +54,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "b3b1e6cdc9ad1200054c43f16a7ee939fa845dc3"
+      "hash": "38916f6cd16de7d991a8ccf681048c1396b5e907"
     },
     "com.facticus.savesystem": {
       "version": "https://github.com/mnicolas94/unity-save-system.git",
