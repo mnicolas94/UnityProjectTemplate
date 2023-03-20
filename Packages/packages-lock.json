@@ -32,6 +32,16 @@
       },
       "hash": "a508df47b1685e507455bf65db0682244cc331a1"
     },
+    "com.facticus.deploy": {
+      "version": "https://github.com/mnicolas94/facticus-deploy.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.facticus.utils": "0.12.21",
+        "com.mackysoft.serializereference-extensions": "1.1.7"
+      },
+      "hash": "35cb674f7abe25babca93ada122742e3a1203f35"
+    },
     "com.facticus.git-team": {
       "version": "https://github.com/mnicolas94/facticus-git-team.git",
       "depth": 0,

@@ -4,6 +4,7 @@
     "com.dbrizov.naughtyattributes": "2.1.4",
     "com.facticus.asyncutils": "https://github.com/mnicolas94/unity-async-utils.git",
     "com.facticus.audio": "https://github.com/mnicolas94/facticus-audio.git",
+    "com.facticus.deploy": "https://github.com/mnicolas94/facticus-deploy.git",
     "com.facticus.git-team": "https://github.com/mnicolas94/facticus-git-team.git",
     "com.facticus.loadingutils": "https://github.com/mnicolas94/unity-loading-utils.git",
     "com.facticus.modelview": "https://github.com/mnicolas94/facticus-modelview.git",
