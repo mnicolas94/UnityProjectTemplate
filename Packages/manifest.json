@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.brunomikoski.animationsequencer": "0.5.1",
     "com.dbrizov.naughtyattributes": "2.1.4",
     "com.facticus.asyncutils": "https://github.com/mnicolas94/unity-async-utils.git",
     "com.facticus.audio": "https://github.com/mnicolas94/facticus-audio.git",
@@ -8,7 +9,7 @@
     "com.facticus.modelview": "https://github.com/mnicolas94/facticus-modelview.git",
     "com.facticus.savesystem": "https://github.com/mnicolas94/unity-save-system.git",
     "com.facticus.serializable-predicate": "https://github.com/mnicolas94/facticus-serializable-predicate.git",
-    "com.facticus.utils": "0.12.20",
+    "com.facticus.utils": "https://github.com/mnicolas94/UnityUtils.git",
     "com.lms.version_mand": "https://github.com/mnicolas94/LMS.Version.git?path=/Assets/Version",
     "com.mackysoft.serializereference-extensions": "1.1.6",
     "com.unity-atoms.unity-atoms-base-atoms": "4.4.5",
@@ -63,8 +64,7 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.brunomikoski.animationsequencer": "0.5.1"
+    "com.unity.modules.xr": "1.0.0"
   },
   "scopedRegistries": [
     {

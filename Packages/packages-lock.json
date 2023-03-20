@@ -74,11 +74,11 @@
       "hash": "3a3fecab29467a3aab9273536c20f2796c225b46"
     },
     "com.facticus.utils": {
-      "version": "0.12.20",
+      "version": "https://github.com/mnicolas94/UnityUtils.git",
       "depth": 0,
-      "source": "registry",
+      "source": "git",
       "dependencies": {},
-      "url": "https://package.openupm.com"
+      "hash": "546ea165a8091764a2350dba9fc10f92936433f7"
     },
     "com.lms.version_mand": {
       "version": "https://github.com/mnicolas94/LMS.Version.git?path=/Assets/Version",
