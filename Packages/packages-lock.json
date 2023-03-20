@@ -21,7 +21,7 @@
       "dependencies": {
         "com.facticus.utils": "0.9.1"
       },
-      "hash": "8850d3e004d6c7a9aa4bd8a696f4700cafe49566"
+      "hash": "ec38cdd70c46ebfb98108886ed111412160f3611"
     },
     "com.facticus.audio": {
       "version": "https://github.com/mnicolas94/facticus-audio.git",
