@@ -88,7 +88,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "6122173a24f3cc40c56f9f7c51cc2e8bc00cfdc2"
+      "hash": "891b3bf6dd7004fb7c58d2187603018755dcfcb4"
     },
     "com.github.siccity.serializablecallback": {
       "version": "https://github.com/Siccity/SerializableCallback.git",

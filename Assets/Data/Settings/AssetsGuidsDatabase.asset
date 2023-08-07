@@ -12,9 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443ad01b5b5251c489993d2ccba8be5c, type: 3}
   m_Name: AssetsGuidsDatabase
   m_EditorClassIdentifier: 
-  _assetToGuid:
-    m_keys: []
-    m_values: []
-  _guidToAsset:
-    m_keys: []
-    m_values: []
+  _assets: []
+  _guids: []
