@@ -12,7 +12,6 @@
     "com.facticus.serializable-predicate": "https://github.com/mnicolas94/facticus-serializable-predicate.git",
     "com.facticus.utils": "https://github.com/mnicolas94/UnityUtils.git",
     "com.github.siccity.serializablecallback": "https://github.com/Siccity/SerializableCallback.git",
-    "com.lms.version_mand": "https://github.com/mnicolas94/LMS.Version.git?path=/Assets/Version",
     "com.mackysoft.serializereference-extensions": "1.1.7",
     "com.unity-atoms.unity-atoms-base-atoms": "4.4.6",
     "com.unity-atoms.unity-atoms-core": "4.4.5",
