@@ -1,14 +1,7 @@
 {
   "dependencies": {
     "com.brunomikoski.animationsequencer": {
-      "version": "0.5.2",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
-    "com.dbrizov.naughtyattributes": {
-      "version": "2.1.4",
+      "version": "0.5.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -41,6 +34,13 @@
         "com.mackysoft.serializereference-extensions": "1.1.7"
       },
       "hash": "e11404154e79772ae6258cc974a4d1dd092d860b"
+    },
+    "com.facticus.fonts-collection": {
+      "version": "https://github.com/mnicolas94/facticus-fonts-collection.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3f0a7c145d1ddbea7814605276de98c340156d79"
     },
     "com.facticus.git-team": {
       "version": "https://github.com/mnicolas94/facticus-git-team.git",
@@ -83,6 +83,17 @@
       "dependencies": {},
       "hash": "3a3fecab29467a3aab9273536c20f2796c225b46"
     },
+    "com.facticus.unity-atoms-extensions": {
+      "version": "https://github.com/mnicolas94/facticus-unity-atoms-extensions.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity-atoms.unity-atoms-core": "4.4.8",
+        "com.unity-atoms.unity-atoms-base-atoms": "4.4.8",
+        "com.unity.textmeshpro": "3.0.6"
+      },
+      "hash": "667e4aa7b89637273b741806860b942beeafb6f9"
+    },
     "com.facticus.utils": {
       "version": "https://github.com/mnicolas94/UnityUtils.git",
       "depth": 0,
@@ -98,25 +109,25 @@
       "hash": "523aeffd079cf7a603720e01958221131427299c"
     },
     "com.mackysoft.serializereference-extensions": {
-      "version": "1.1.7",
+      "version": "1.1.9",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
     "com.unity-atoms.unity-atoms-base-atoms": {
-      "version": "4.4.6",
+      "version": "4.4.8",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.physics": "1.0.0",
         "com.unity.modules.physics2d": "1.0.0",
-        "com.unity-atoms.unity-atoms-core": "4.4.6"
+        "com.unity-atoms.unity-atoms-core": "4.4.8"
       },
       "url": "https://package.openupm.com"
     },
     "com.unity-atoms.unity-atoms-core": {
-      "version": "4.4.6",
+      "version": "4.4.8",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -383,21 +394,21 @@
       }
     },
     "com.yasirkula.assetusagedetector": {
-      "version": "2.4.1",
+      "version": "2.5.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
     "com.yasirkula.ingamedebugconsole": {
-      "version": "1.6.1",
+      "version": "1.6.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
     "net.tnrd.serializableinterface": {
-      "version": "1.12.1",
+      "version": "2.1.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
