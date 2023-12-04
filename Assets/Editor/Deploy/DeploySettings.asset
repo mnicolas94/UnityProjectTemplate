@@ -13,11 +13,18 @@ MonoBehaviour:
   m_Name: DeploySettings
   m_EditorClassIdentifier: 
   _workflowId: build_and_deploy
+  _updateWorkflowAutomatically: 1
+  _gitDirectory: 
   _defaultAssetDirectory: Assets/Editor/Deploy
+  _backend:
+    rid: 1904655509916221440
   _notifyPlatform:
     rid: 3334506971384512512
+  _versioningStrategy: 0
   references:
     version: 2
     RefIds:
+    - rid: 1904655509916221440
+      type: {class: GithubActionsBackend, ns: Deploy.Editor.BackEnds, asm: com.facticus.deploy.editor}
     - rid: 3334506971384512512
       type: {class: TelegramNotifyPlatform, ns: Deploy.Editor.NotifyPlatforms, asm: com.facticus.deploy.editor}

@@ -7,6 +7,15 @@
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
+    "com.codewriter.triinspector": {
+      "version": "https://github.com/codewriter-packages/Tri-Inspector.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.localization": "1.0.0"
+      },
+      "hash": "86fed7a83099b9d8f5b9f82b5c146873023a6e5c"
+    },
     "com.facticus.asyncutils": {
       "version": "https://github.com/mnicolas94/unity-async-utils.git",
       "depth": 0,

@@ -15,8 +15,7 @@ MonoBehaviour:
   _serializer:
     rid: 0
   _encryptData: 1
-  _searchDatabaseAssetsInPaths:
-  - Assets/Data/
+  _searchDatabaseAssetsInPaths: []
   _ignoreDatabaseAssetsInPaths:
   - Assets/Data/Localization
   - Assets/Data/Settings
