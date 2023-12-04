@@ -21,7 +21,7 @@
       "dependencies": {
         "com.facticus.utils": "0.9.1"
       },
-      "hash": "7366b799626aa18eb0c565425ddcf5542305f6d3"
+      "hash": "3438f0b17d328a3abc5f60036d3e1668ab01283e"
     },
     "com.facticus.audio": {
       "version": "https://github.com/mnicolas94/facticus-audio.git",
@@ -37,10 +37,10 @@
       "depth": 0,
       "source": "git",
       "dependencies": {
-        "com.facticus.utils": "0.12.52",
+        "com.facticus.utils": "0.12.64",
         "com.mackysoft.serializereference-extensions": "1.1.7"
       },
-      "hash": "3d659d03a6b54ac7b9312bd48c67ea1f0f2016b9"
+      "hash": "e11404154e79772ae6258cc974a4d1dd092d860b"
     },
     "com.facticus.git-team": {
       "version": "https://github.com/mnicolas94/facticus-git-team.git",
@@ -55,16 +55,16 @@
       "source": "git",
       "dependencies": {
         "com.facticus.asyncutils": "https://github.com/mnicolas94/unity-async-utils.git",
-        "com.facticus.utils": "0.10.0"
+        "com.facticus.utils": "0.12.80"
       },
-      "hash": "fc64e3c04f4e7442a6556497cb07b902cb64ed08"
+      "hash": "275de3be70b32fc0955fab4557bbfed7744b193b"
     },
     "com.facticus.modelview": {
       "version": "https://github.com/mnicolas94/facticus-modelview.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "580ab1bf11aa73867c4bee00a506208c306b2de0"
+      "hash": "15d3e36bc6d33ba07fc11658d85fb817293d0ce1"
     },
     "com.facticus.savesystem": {
       "version": "https://github.com/mnicolas94/unity-save-system.git",
@@ -74,7 +74,7 @@
         "com.facticus.utils": "0.10.0",
         "com.unity.addressables": "1.19.18"
       },
-      "hash": "d582a91757378db2e4ca5a5bae7bae788155db6a"
+      "hash": "0afdd9e9505af58c4b2d760d0d1aed9677aa014b"
     },
     "com.facticus.serializable-predicate": {
       "version": "https://github.com/mnicolas94/facticus-serializable-predicate.git",
@@ -88,14 +88,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "891b3bf6dd7004fb7c58d2187603018755dcfcb4"
+      "hash": "5fc0a813fd9a21e068353397230dce3b314ece48"
     },
     "com.github.siccity.serializablecallback": {
-      "version": "https://github.com/Siccity/SerializableCallback.git",
+      "version": "https://github.com/mnicolas94/SerializableCallback.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "7ff19f122305b6adb47bbee6c8e36e77cb471fb0"
+      "hash": "523aeffd079cf7a603720e01958221131427299c"
     },
     "com.mackysoft.serializereference-extensions": {
       "version": "1.1.7",
@@ -315,6 +315,22 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.sysroot": {
+      "version": "2.0.7",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.sysroot.linux-x86_64": {
+      "version": "2.0.6",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.sysroot": "2.0.7"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.test-framework": {
       "version": "1.1.33",
       "depth": 0,
@@ -344,6 +360,16 @@
         "com.unity.modules.animation": "1.0.0",
         "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.particlesystem": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.toolchain.win-x86_64-linux-x86_64": {
+      "version": "2.0.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.sysroot": "2.0.7",
+        "com.unity.sysroot.linux-x86_64": "2.0.6"
       },
       "url": "https://packages.unity.com"
     },
