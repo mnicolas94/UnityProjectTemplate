@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99951f7576ee4387a2abcda42dc49ba2, type: 3}
+  m_Name: AssetReferencesFilterStorage
+  m_EditorClassIdentifier: 
+  _filters:
+  - rid: 4797377551255732644
+  references:
+    version: 2
+    RefIds:
+    - rid: 4797377551255732644
+      type: {class: ReferencesSearchAndIgnore, ns: SaveSystem.Editor.GuidsResolve.Filters, asm: com.facticus.savesystem.Editor}
+      data:
+        _addAssets: []
+        _ignoreAssets:
+        - _guidLow: 4278988395815412212
+          _guidHigh: 17962147653821148752
+          _targetObjectId: 102900000
+          _targetPrefabId: 0
+          _identifierType: 1
+        - _guidLow: 8969254327694383108
+          _guidHigh: 3107993239357803556
+          _targetObjectId: 102900000
+          _targetPrefabId: 0
+          _identifierType: 1

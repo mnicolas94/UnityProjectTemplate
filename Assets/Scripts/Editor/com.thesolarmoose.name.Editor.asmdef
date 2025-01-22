@@ -1,6 +1,6 @@
 {
     "name": "com.thesolarmoose.name.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "TSM",
     "references": [
         "GUID:591197a4b0d08be4bb2689923abe1d83"
     ],

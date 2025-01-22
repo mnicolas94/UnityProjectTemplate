@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d6fc6f654dd5749a20c09a3cc606f8, type: 3}
   m_Name: SaveSettings
   m_EditorClassIdentifier: 
+  _storage:
+    rid: 4797377551255732623
+  _profile: 
   _serializer:
-    rid: 0
-  _encryptData: 1
+    rid: 4797377551255732643
+  _encryptData: 0
+  _guidsResolver:
+    rid: 4797377551255732624
   _searchDatabaseAssetsInPaths: []
-  _ignoreDatabaseAssetsInPaths:
-  - Assets/Data/Localization
-  - Assets/Data/Settings
+  _ignoreDatabaseAssetsInPaths: []
   _populateDatabaseBeforeEnterPlayMode: 1
   _broadcaster:
     _onSave:
@@ -31,7 +34,16 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 0
-      type: {class: OdinPersistentSerializer, ns: SaveSystem.Serializers, asm: com.facticus.savesystem}
+    - rid: 4797377551255732623
+      type: {class: FilesStorage, ns: SaveSystem.Storages, asm: com.facticus.savesystem}
       data:
-        _format: 0
+        _fileExtension: dat
+    - rid: 4797377551255732624
+      type: {class: GuidsDatabase, ns: SaveSystem.GuidsResolve, asm: com.facticus.savesystem}
+      data:
+        _assets: []
+        _guids: []
+    - rid: 4797377551255732643
+      type: {class: UnitySerializer, ns: SaveSystem.Serializers, asm: com.facticus.savesystem}
+      data:
+        _mode: 0

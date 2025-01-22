@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62ec1b869f74feb9e8ce271077103f5, type: 3}
   m_Name: LoadingSettings
   m_EditorClassIdentifier: 
+  _bootstrapInEditor: 0
+  _bootstrapInPlayerBuild: 0
+  _reloadActiveSceneInEditor: 0
+  _reloadActiveSceneInPlayer: 0
+  _boostrapScene: {fileID: 0}
   _defaultLoadingSceneName: 
   minLoadingTime: 0

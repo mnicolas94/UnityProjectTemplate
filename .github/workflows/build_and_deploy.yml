@@ -1,4 +1,4 @@
-﻿name: Build and Deploy
+name: Build and Deploy
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   run:
-    uses: mnicolas94/facticus-deploy/.github/workflows/workflow_call.yml@v0.4.15
+    uses: mnicolas94/facticus-deploy/.github/workflows/workflow_call.yml@v0.6.31
     with:
       json_parameters: ${{ inputs.json_parameters }}
     secrets:
