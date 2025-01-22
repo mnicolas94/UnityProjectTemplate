@@ -9,6 +9,8 @@
     "com.facticus.loadingutils": "https://github.com/mnicolas94/unity-loading-utils.git",
     "com.facticus.modelview": "https://github.com/mnicolas94/facticus-modelview.git",
     "com.facticus.savesystem": "https://github.com/mnicolas94/unity-save-system.git",
+    "com.facticus.simple-data-editor": "https://github.com/mnicolas94/facticus-simple-data-editor.git",
+    "com.facticus.ui": "https://github.com/mnicolas94/facticus-ui.git",
     "com.facticus.unity-atoms-extensions": "https://github.com/mnicolas94/facticus-unity-atoms-extensions.git",
     "com.facticus.utils": "https://github.com/mnicolas94/UnityUtils.git",
     "com.github.siccity.serializablecallback": "https://github.com/mnicolas94/SerializableCallback.git",
@@ -66,7 +68,9 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
+    "com.unity.modules.xr": "1.0.0",
+    "com.cysharp.unitask": "2.5.10",
+    "com.sandrofigo.simplecodegenerator": "2.0.0"
   },
   "scopedRegistries": [
     {
@@ -75,11 +79,13 @@
       "scopes": [
         "com.brunomikoski.animationsequencer",
         "com.codewriter.triinspector",
+        "com.cysharp.unitask",
         "com.dbrizov",
         "com.facticus.utils",
         "com.mackysoft.serializereference-extensions",
         "com.needle",
         "com.openupm",
+        "com.sandrofigo.simplecodegenerator",
         "com.unity-atoms.unity-atoms-base-atoms",
         "com.unity-atoms.unity-atoms-core",
         "com.yasirkula",

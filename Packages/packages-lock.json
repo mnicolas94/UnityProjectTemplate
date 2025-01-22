@@ -16,6 +16,13 @@
       },
       "url": "https://package.openupm.com"
     },
+    "com.cysharp.unitask": {
+      "version": "2.5.10",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.facticus.asyncutils": {
       "version": "https://github.com/mnicolas94/unity-async-utils.git",
       "depth": 0,
@@ -81,6 +88,27 @@
       },
       "hash": "b4aa9f9fac51dd3cf8a72028ad4d810e20958c87"
     },
+    "com.facticus.simple-data-editor": {
+      "version": "https://github.com/mnicolas94/facticus-simple-data-editor.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.facticus.utils": "0.13.1",
+        "com.sandrofigo.simplecodegenerator": "2.0.0",
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+      },
+      "hash": "ac2f68debd65800c73890888ff0500c5d7a07d48"
+    },
+    "com.facticus.ui": {
+      "version": "https://github.com/mnicolas94/facticus-ui.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.cysharp.unitask": "2.5.10",
+        "com.facticus.utils": "0.13.20"
+      },
+      "hash": "85b4f3475702e802dea0d4458a3410a138261c78"
+    },
     "com.facticus.unity-atoms-extensions": {
       "version": "https://github.com/mnicolas94/facticus-unity-atoms-extensions.git",
       "depth": 0,
@@ -108,6 +136,13 @@
     },
     "com.mackysoft.serializereference-extensions": {
       "version": "1.6.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.sandrofigo.simplecodegenerator": {
+      "version": "2.0.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {},

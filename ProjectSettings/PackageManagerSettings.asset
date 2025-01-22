@@ -33,11 +33,13 @@ MonoBehaviour:
     m_Scopes:
     - com.brunomikoski.animationsequencer
     - com.codewriter.triinspector
+    - com.cysharp.unitask
     - com.dbrizov
     - com.facticus.utils
     - com.mackysoft.serializereference-extensions
     - com.needle
     - com.openupm
+    - com.sandrofigo.simplecodegenerator
     - com.unity-atoms.unity-atoms-base-atoms
     - com.unity-atoms.unity-atoms-core
     - com.yasirkula
