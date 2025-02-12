@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72111793552e425682d741c596b571dc, type: 3}
+  m_Name: AudioSettingsEditor
+  m_EditorClassIdentifier: 
+  musicPrefab: {fileID: 7335947974341565748, guid: ea935d0a2711a07438bb6a3cbbfbf61d, type: 3}
+  voicePrefab: {fileID: 8148527064414243285, guid: 3d55098aa4e0546459f85da67bce5a30, type: 3}
+  sfxPrefab: {fileID: 2290656358466669799, guid: cb9e84dc20477ab4a8318fbc303aa4cd, type: 3}
+  environmentPrefab: {fileID: 6912372424727159496, guid: cad44f8124a285e438942e7ef826c2bd, type: 3}

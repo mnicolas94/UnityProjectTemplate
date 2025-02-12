@@ -70,13 +70,15 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0",
     "com.cysharp.unitask": "2.5.10",
-    "com.sandrofigo.simplecodegenerator": "2.0.0"
+    "com.sandrofigo.simplecodegenerator": "2.0.0",
+    "com.annulusgames.u-pools": "1.0.1"
   },
   "scopedRegistries": [
     {
       "name": "OpenUPM",
       "url": "https://package.openupm.com",
       "scopes": [
+        "com.annulusgames.u-pools",
         "com.brunomikoski.animationsequencer",
         "com.codewriter.triinspector",
         "com.cysharp.unitask",

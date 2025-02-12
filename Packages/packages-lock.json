@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.annulusgames.u-pools": {
+      "version": "1.0.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.brunomikoski.animationsequencer": {
       "version": "0.5.4",
       "depth": 0,
@@ -37,9 +44,10 @@
       "depth": 0,
       "source": "git",
       "dependencies": {
+        "com.annulusgames.u-pools": "1.0.1",
         "com.mackysoft.serializereference-extensions": "1.1.6"
       },
-      "hash": "97149e4dc57e73645a609e3f435cb9bd9fffe3a0"
+      "hash": "2d75a3fae88e2211b765f196157a3ec9fd5cadf6"
     },
     "com.facticus.deploy": {
       "version": "https://github.com/mnicolas94/facticus-deploy.git",
