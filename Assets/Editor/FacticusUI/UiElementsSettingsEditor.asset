@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97d6d09bfc545b4af0d3c074876bd37, type: 3}
+  m_Name: UiElementsSettingsEditor
+  m_EditorClassIdentifier: 
+  canvasPrefab: {fileID: 3375921600045301104, guid: 8f2c6ae395eb2a94b996da03b030c47b, type: 3}
+  textPrefab: {fileID: 2508306190537183347, guid: 0ab5d16a2186dce47a9a815c3347f395, type: 3}
+  textButtonPrefab: {fileID: 8045854036189651785, guid: 121ec7b8f0ca8284081ccafc8d3a6c1f, type: 3}
+  iconButtonPrefab: {fileID: 3541771480652211499, guid: b0e8252a6c47fc045a7ee98a6314979e, type: 3}
+  loadingIcon: {fileID: 8612269970597310763, guid: 8eb1b8ab115ce2448a48d112e8ce94ad, type: 3}
