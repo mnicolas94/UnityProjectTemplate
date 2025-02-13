@@ -476,6 +476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadingIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 8612269970597310763, guid: 8eb1b8ab115ce2448a48d112e8ce94ad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
